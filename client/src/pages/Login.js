@@ -21,6 +21,10 @@ const Login = () => {
         })
         .then(res => {
             console.log(res);
+            localStorage.setItem("isAuthenticated", "true");
+            localStorage.setItem("name", res.data.name);
+            localStorage.setItem("email", res.data.email);
+            window.location.href = "/";
         })
         .catch(err => {
             console.log(err);
