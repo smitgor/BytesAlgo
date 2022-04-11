@@ -43,7 +43,8 @@ const AddJob = () =>{
             {
                 alert("Job added successfully..")
             }
-            window.location.href = '/';            
+            console.log(res.data);
+            //window.location.href = '/';            
         })
         .catch(err => {
             console.log(err);
@@ -116,7 +117,7 @@ const AddJob = () =>{
                     *
                 </span>
             </label>
-            <input type="text" onChange={handleEmail} value={window.localStorage.getItem("email")} id="required-email" disabled="" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email"/>
+            <input type="text" onChange={handleEmail} value={window.localStorage.getItem("email")} id="required-email" disabled="" class=" rou  nded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email"/>
         </div>
         
         <div class="w-1/4 m-5">

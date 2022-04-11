@@ -20,11 +20,21 @@ const Login = () => {
             password: password
         })
         .then(res => {
-            console.log(res);
-            localStorage.setItem("isAuthenticated", "true");
-            localStorage.setItem("name", res.data.name);
-            localStorage.setItem("email", res.data.email);
-            window.location.href = "/";
+            console.log(res.data);
+            if(res.data.email)
+            {
+                localStorage.setItem("isAuthenticated", "true");
+                localStorage.setItem("name", res.data.name);
+                localStorage.setItem("email", res.data.email);
+                localStorage.setItem("role", res.data.role);
+                window.location.href = "/";
+            }
+            else
+            {
+                console.log(res.data.length);
+                alert("Invalid Credentials");
+                window.location.href = "/login";
+            }
         })
         .catch(err => {
             console.log(err);

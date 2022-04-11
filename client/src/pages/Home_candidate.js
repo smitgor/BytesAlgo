@@ -1,16 +1,16 @@
 import { React, useEffect, useState } from "react";
 import Axios from "axios";
-import AddJob from "./AddJob";
-import List from "./List";
+import Job_list from "./Job_list";
+import Application_List from "./Application_List";
 
-const Home = () => {
-    const [add, setAdd] = useState(false);
-    const [list, setList] = useState(true);
+const Home_candidate = () => {
+    const [home, setHome] = useState(true);
+    const [list, setList] = useState(false);
     const [user, setUser] = useState(window.localStorage.getItem("name"));
     const [role, setRole] = useState(window.localStorage.getItem("role"));
 
     const handleChange = e => {
-        setAdd(!add);
+        setHome(!home);
         setList(!list);
     }
     const handleLogout = e => {
@@ -19,11 +19,8 @@ const Home = () => {
         window.localStorage.clear();
         window.location.href = "/login";
     }
-
     return (
-    <>  
-        
-        <div>
+        <>
             <nav class="bg-white dark:bg-gray-800  shadow py-4 ">
                 <div class="max-w-7xl mx-auto px-8">
                     <div class="flex items-center justify-between h-16">
@@ -33,11 +30,11 @@ const Home = () => {
                         </a>
                         <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <a class=" hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium" onClick={handleChange}>
-                                <span class={list ? "hover:text-gray-800":"text-gray-400"}>Job List</span>
-                            </a>
                             <a class="dark:hover:text-white px-3 py-2 rounded-md text-md font-medium" onClick={handleChange}>
-                                <span class={add ? "hover:text-gray-800 ":"text-gray-400 "}>Add Job</span>
+                                <span class={home ? "hover:text-gray-800 ":"text-gray-400 "}>Home</span>
+                            </a>
+                            <a class=" hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium" onClick={handleChange}>
+                                <span class={list ? "hover:text-gray-800":"text-gray-400"}>Application List</span>
                             </a>
                         </div>
                     </div>
@@ -67,12 +64,10 @@ const Home = () => {
                 </div>
             </div>
             </nav>
-        </div>
-
-        {list ? <List /> : null}
-        {add ? <AddJob /> : null}
-    </>
+            {home ? < Job_list/> : null}
+            {list ? < Application_List/> : null}
+        </>
     );
 }
 
-export default Home;
+export default Home_candidate;

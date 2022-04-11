@@ -103,7 +103,7 @@ const Signup = () => {
                             </div>
                             <ul class="grid grid-cols-2 gap-x-5 max-w-md mx-auto">
                                 <li class="relative">
-                                    <input class="sr-only peer" type="radio" onChange={handleRole} value="recruiter" name="role" id="answer_recruiter"/>
+                                    <input class="sr-only peer" type="radio" onChange={handleRole} value="Recruiter" name="role" id="answer_recruiter"/>
                                     <label class="flex p-5 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-green-400 peer-checked:ring-2 peer-checked:border-transparent" for="answer_recruiter">Recruiter</label>
 
                                     <div class="absolute hidden w-5 h-5 peer-checked:block top-5 right-3">
@@ -111,7 +111,7 @@ const Signup = () => {
                                     </div>
                                 </li>
                                 <li class="relative">
-                                    <input class="sr-only peer" type="radio" onChange={handleRole} value="candidate" name="role" id="answer_candidate"/>
+                                    <input class="sr-only peer" type="radio" onChange={handleRole} value="Candidate" name="role" id="answer_candidate"/>
                                     <label class="flex p-5 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-green-400 peer-checked:ring-2 peer-checked:border-transparent" for="answer_candidate">Candidate</label>
 
                                     <div class="absolute hidden w-5 h-5 peer-checked:block top-5 right-3">
